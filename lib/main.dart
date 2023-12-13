@@ -6,14 +6,14 @@ final List<String> perguntas = [
   'Qual o seu animal favorito?'
 ];
 
-class PerguntaAppState extends State<PerguntaApp> {
-  var perguntaSelecionada = 0;
-  void responder() {
+class _PerguntaAppState extends State<PerguntaApp> {
+  var _perguntaSelecionada = 0;
+  void _responder() {
     setState(() {
-    perguntaSelecionada++;  
+    _perguntaSelecionada++;  
     });
     
-    print(perguntaSelecionada);
+    print(_perguntaSelecionada);
   }
 
   @override
@@ -24,10 +24,10 @@ class PerguntaAppState extends State<PerguntaApp> {
             title: Text('perguntas'),
           ),
           body: Column(children: [
-            Text(perguntas.elementAt(perguntaSelecionada)),
-            RaisedButton(child: Text('Resposta 1'), onPressed: responder),
-            RaisedButton(child: Text('Resposta 2'), onPressed: responder),
-            RaisedButton(child: Text('Resposta 3'), onPressed: responder)
+            Text(perguntas.elementAt(_perguntaSelecionada)),
+            RaisedButton(child: Text('Resposta 1'), onPressed: _responder),
+            RaisedButton(child: Text('Resposta 2'), onPressed: _responder),
+            RaisedButton(child: Text('Resposta 3'), onPressed: _responder)
           ])),
     );
   }
@@ -35,7 +35,7 @@ class PerguntaAppState extends State<PerguntaApp> {
 
 class PerguntaApp extends StatefulWidget {
   @override
-  PerguntaAppState createState() {
-    return new PerguntaAppState();
+  _PerguntaAppState createState() {
+    return new _PerguntaAppState();
   }
 }
