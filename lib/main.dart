@@ -14,8 +14,6 @@ class _PerguntaAppState extends State<PerguntaApp> {
     setState(() {
       _perguntaSelecionada++;
     });
-
-    print(_perguntaSelecionada);
   }
 
   @override
@@ -27,10 +25,9 @@ class _PerguntaAppState extends State<PerguntaApp> {
           ),
           body: Column(children: [
             Questao(perguntas.elementAt(_perguntaSelecionada)),
-            Resposta('reposta 1'),
-            Resposta('reposta 2'),
-            Resposta('reposta 3'),
-            
+            Resposta('reposta 1', _responder),
+            Resposta('reposta 2', _responder),
+            Resposta('reposta 3', _responder),
           ])),
     );
   }
