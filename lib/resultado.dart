@@ -9,9 +9,9 @@ class Resultado extends StatelessWidget {
   String get fraseResultado {
     if (pontuacao < 8) {
       return 'Parabéns';
-    } else if (pontuacao < 12) {
+    } else if (pontuacao < 11) {
       return 'você é bom';
-    } else if (pontuacao < 16) {
+    } else if (pontuacao < 19) {
       return 'Impressionante!';
     } else {
       return 'Nível jedi!';

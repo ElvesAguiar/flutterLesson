@@ -11,38 +11,56 @@ class _PerguntaAppState extends State<PerguntaApp> {
   final _perguntas = const [
     {
       'texto': 'Qual é a sua cor favorita?',
-     'respostas': [
-        {'texto': 'Preto', 'pontuacao': 10},
-        {'texto': 'Vermelho', 'pontuacao': 6},
-        {'texto': 'Verde', 'pontuacao': 8},
-        {'texto': 'Branco', 'pontuacao': 5},
+      'respostas': [
+        {'texto': 'Preto', 'pontuacao': 5},
+        {'texto': 'Vermelho', 'pontuacao': 3},
+        {'texto': 'Verde', 'pontuacao': 2},
+        {'texto': 'Branco', 'pontuacao': 1},
       ],
     },
     {
       'texto': 'Qual é o seu animal favorito?',
       'respostas': [
-        {'texto': 'Coelho', 'pontuacao': 10},
-        {'texto': 'Cobra', 'pontuacao': 5},
+        {'texto': 'Coelho', 'pontuacao': 2},
+        {'texto': 'Cobra', 'pontuacao': 1},
         {'texto': 'Elefante', 'pontuacao': 3},
-        {'texto': 'Leão', 'pontuacao': 1},
+        {'texto': 'Leão', 'pontuacao': 5},
       ],
     },
     {
-      'texto': 'Qual é o seu instrutor favorito?',
+      'texto': 'Dentre esses, Qual é o seu filme favorito?',
       'respostas': [
-        {'texto': 'Maria', 'pontuacao': 10},
-        {'texto': 'João', 'pontuacao': 8},
-        {'texto': 'Leo', 'pontuacao': 4},
-        {'texto': 'Pedro', 'pontuacao': 7},
+        {'texto': 'Vingadores: Ultimato', 'pontuacao': 3},
+        {'texto': 'O Poderoso Chefão', 'pontuacao': 1},
+        {'texto': 'O Rei Leão', 'pontuacao': 5},
+        {'texto': 'O Senhor dos Anéis - O Retorno do Rei', 'pontuacao': 4},
       ],
     },
+    {
+      'texto': 'Qual é o seu esporte favorito?',
+      'respostas': [
+        {'texto': 'Futebol', 'pontuacao': 4},
+        {'texto': 'Basquete', 'pontuacao': 3},
+        {'texto': 'Tênis', 'pontuacao': 2},
+        {'texto': 'Vôlei', 'pontuacao': 1},
+      ],
+    },
+    {
+      'texto': 'Qual é a sua bebida preferida?',
+      'respostas': [
+        {'texto': 'Água', 'pontuacao': 1},
+        {'texto': 'Suco', 'pontuacao': 2},
+        {'texto': 'Refrigerante', 'pontuacao': 3},
+        {'texto': 'Café', 'pontuacao': 4},
+      ],
+    }
   ];
 
   void _responder(int pontuacao) {
     if (temPerguntaSelecionada) {
       setState(() {
         _perguntaSelecionada++;
-        _pontuacaototal+=pontuacao;
+        _pontuacaototal += pontuacao;
       });
     }
     print(_pontuacaototal);
@@ -50,8 +68,8 @@ class _PerguntaAppState extends State<PerguntaApp> {
 
   void _reiniciarQuestionario() {
     setState(() {
-      _perguntaSelecionada=0;
-      _pontuacaototal =0;
+      _perguntaSelecionada = 0;
+      _pontuacaototal = 0;
     });
   }
 
@@ -72,7 +90,7 @@ class _PerguntaAppState extends State<PerguntaApp> {
                 perguntaSelecionada: _perguntaSelecionada,
                 quandoResponder: _responder,
               )
-            : Resultado(_pontuacaototal,_reiniciarQuestionario),
+            : Resultado(_pontuacaototal, _reiniciarQuestionario),
       ),
     );
   }
